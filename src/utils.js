@@ -15,6 +15,7 @@ export const passportCall = (strategy) => {
         res
           .status(401)
           .send({ error: info.messages ? info.messages : info.toString() });
+        return;
       }
       req.user = user;
       next();
